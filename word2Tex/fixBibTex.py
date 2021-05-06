@@ -85,11 +85,20 @@ def resolve_ID_matches(db, index='journal'):
 
             x['ID'] = new_id
 
-    return out
+    IDs = [x['ID'] for x in out.entries]
+    counts = Counter(IDs)
+    if all([y==1 for y in counts.values()]):
+        return out
+    else:
+        return resolve_ID_matches(out, index='digit')
 
 
 def fix_bibtexDB(fn, save_file=None):
-    """
+    """fixes all citation IDs
+    :param fn: file to fix
+    :type fn: str
+    :param save_file: output file (optional), default appends '-fixed' to filename
+    :type save_file: str
     """
     with open(fn) as f:
         db = btp.load(f)
@@ -116,6 +125,7 @@ def main():
     args = parser.parse_args()
 
     fix_bibtexDB(args.file, save_file=args.output)
+
 
 if __name__ == "__main__":
     main()
