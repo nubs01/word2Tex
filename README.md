@@ -2,6 +2,11 @@
 The modules included in this package are cite2Tex and fixBibTex which help with
 citations when migrating a manuscript into LaTeX.
 
+## Installation
+```bash
+pip install word2Tex
+```
+
 ## cite2Tex
 This module can be used as a command-line tool or in python. It goes through a
 text file and converts citations into LaTeX format (e.g. Viena et al. 2018 -->
