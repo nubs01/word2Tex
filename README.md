@@ -27,7 +27,7 @@ To use in python:
 from word2Tex import cite2Tex as c2t
 fn = 'path_to_file.txt'
 bib_fn = 'path_to_bib.bib' # optional
-save_file = 'path_to_save_edited_text.txt # optional, regardless will always write to a new file
+save_file = 'path_to_save_edited_text.txt' # optional, regardless will always write to a new file
 
 # This will allow you to view all citations in the document and see what they will become
 with open(fn) as f:
