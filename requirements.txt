@@ -1,0 +1,2 @@
+pandas
+bibtexparser>=1.2
