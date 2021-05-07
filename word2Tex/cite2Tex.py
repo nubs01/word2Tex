@@ -105,6 +105,7 @@ def citation_lookup(citation, bib):
     :return: list of citation keys
     :type: list of str
     """
+    citation = citation.replace('\n', ' ')
     if isinstance(bib, str) and os.path.isfile(bib):
         with open(bib) as f:
             tmp = btp.load(f)

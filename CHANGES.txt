@@ -1,3 +1,4 @@
+- handle citations with line breaks in them
 word2Tex 0.0.2 (2021-5-6)
 -----------------------------------
 - fix imports
