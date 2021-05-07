@@ -157,6 +157,10 @@ def citations2Tex(fn, bib=None, save_file=None):
         text = f.read()
 
     matches = find_matches(text, bib=bib)
+    if matches.empty:
+        print('No citations found to edit. Done!')
+        return
+
     new_text = text
     no_change = []
     if 'in_bib' in matches.columns:
@@ -199,6 +203,7 @@ def main():
     args = parser.parse_args()
 
     citations2Tex(args.file, bib=args.bib, save_file=args.output)
+
 
 if __name__ == '__main__':
     main()

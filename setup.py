@@ -14,7 +14,7 @@ if os.path.isfile(requirementPath):
 
 setuptools.setup(
     name='word2Tex',
-    version='0.0.5',
+    version='0.0.6',
     author='Roshan Nanu',
     author_email='roshan.nanu@gmail.com',
     description='package for moving manuscripts from Word to LaTeX',
