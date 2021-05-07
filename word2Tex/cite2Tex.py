@@ -6,7 +6,7 @@ import bibtexparser as btp
 import argparse
 
 
-PATTERN = "(?:(?P<name1>[^0-9\s\(\)]+)|(?P<name2>[^0-9\s\(\)]+)(?:\set\sal[.]*)|(?P<name3>[^0-9\s\(\)]+)(?:\s&\s[^\s\(\)]+))\s(?P<year>\d{4})"
+PATTERN = "(?:(?P<name1>[^0-9\s\(\),]+)|(?P<name2>[^0-9\s\(\)]+)(?:\set\sal[.]*)|(?P<name3>[^0-9\s\(\)]+)(?:\s&\s[^\s\(\)]+))\s(?P<year>\d{4})"
 
 def find_matches(text, pattern=PATTERN, bib=None):
     """Finds citations in text (e.g. Varela et al 2014, Sigurdsson & Duvarci

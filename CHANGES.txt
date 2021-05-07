@@ -1,3 +1,7 @@
+word2Tex 0.0.5 (2021-5-7)
+-----------------------------------
+- stop from picking up parts of dates as citations
+
 word2Tex 0.0.4 (2021-5-7)
 -----------------------------------
 - stop from picking up dates as citations
