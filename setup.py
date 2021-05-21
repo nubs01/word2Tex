@@ -14,7 +14,7 @@ if os.path.isfile(requirementPath):
 
 setuptools.setup(
     name='word2Tex',
-    version='0.0.6',
+    version='0.0.7',
     author='Roshan Nanu',
     author_email='roshan.nanu@gmail.com',
     description='package for moving manuscripts from Word to LaTeX',
@@ -26,7 +26,8 @@ setuptools.setup(
     entry_points = {
         'console_scripts': [
             'cite2Tex=word2Tex.cite2Tex:main',
-            'fixBibTex=word2Tex.fixBibTex:main'
+            'fixBibTex=word2Tex.fixBibTex:main',
+            'doi2bib=word2Tex.doi2bib:main'
         ]
     },
     classifiers=[
