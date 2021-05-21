@@ -1,3 +1,4 @@
+import os
 import requests
 import argparse
 import bibtexparser as btp
