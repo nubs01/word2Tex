@@ -1,3 +1,7 @@
+word2Tex 0.0.8 (2021-5-21)
+-----------------------------------
+- Fix typo in doi lookup url
+
 word2Tex 0.0.7 (2021-5-21)
 -----------------------------------
 - Add doi2bib tool to add new references to bibtex file via doi lookup

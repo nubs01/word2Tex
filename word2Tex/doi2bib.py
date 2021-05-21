@@ -11,7 +11,7 @@ def doi_lookup(doi):
     :return: reference information
     :rtype: dict
     """
-    url = "https:://dx.doi.org/" + doi
+    url = "https://dx.doi.org/" + doi
     headers = {"accept": "application/x-bibtex"}
     r = requests.get(url, headers = headers)
     bp = btp.bparser.BibTexParser(interpolate_strings=False)
