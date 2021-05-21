@@ -37,8 +37,11 @@ def add_to_bibtex(bib_fn, doi):
         print('No reference added to bibtex database')
         return
 
-    with open(bib_fn) as f:
-        db = btp.load(f)
+    if os.path.isfile(bib_fn):
+        with open(bib_fn) as f:
+            db = btp.load(f)
+    else:
+        db = btp.bibdatabase.BibDatabase()
 
     db.entries.append(ref)
     db = resolve_ID_matches(db)
