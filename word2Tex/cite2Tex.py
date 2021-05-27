@@ -87,9 +87,23 @@ def parse_authors(auth_str):
     :rtype: list of str
     """
     a_list = auth_str.split(' and ')
-    out = []
-    for x in a_list:
-        out.append(x.split(',')[0])
+    out = [decode_Tex_accents(x.split(' ')[-1]) for x in a_list]
+    return out
+
+def decode_Tex_accents(in_str):
+    """Converts a string containing LaTex accents (i.e. "{\\`{O}}") to ASCII
+    (i.e. "O"). Useful for correcting author names when bib entries were
+    queried from web via doi
+
+    :param in_str: input str to decode
+    :type in_str: str
+    :return: corrected string
+    :rtype: str
+    """
+    pat = "\{\\\\'\{(\w)\}\}"
+    out = in_str
+    for x in re.finditer(pat, in_str):
+        out = out.replace(x.group(), x.groups()[0])
 
     return out
 
@@ -122,6 +136,7 @@ def citation_lookup(citation, bib):
         authors = [citation.split(' ')[0]]
         num_auth = 1
 
+    authors = [decode_Tex_accents(x) for x in authors]
     matches = []
     for entry in bib.entries:
         if year != entry['year']:

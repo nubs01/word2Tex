@@ -3,6 +3,7 @@ import requests
 import argparse
 import bibtexparser as btp
 from word2Tex.fixBibTex import resolve_ID_matches
+from word2Tex.cite2Tex import decode_Tex_accents, parse_authors
 
 def doi_lookup(doi):
     """queries for article data based on given doi
@@ -24,6 +25,19 @@ def doi_lookup(doi):
         print(f'Found reference for DOI: {doi}')
         print(r.text)
         return db.entries[0]
+
+
+def fix_queried_ref(ref):
+    """Fixes the ID for references to deal with author names with accents.
+    Leaves author names intact in author field.
+    :param ref: reference to fix, output from doi_lookup
+    :type ref: dict
+    :return: fixed reference
+    :rtype: dict
+    """
+    authors = parse_authors(ref['author'])
+    ref['ID'] = '%s_%s' % (authors[0], ref['year'])
+    return ref
 
 
 def add_to_bibtex(bib_fn, doi):
