@@ -48,6 +48,7 @@ def add_to_bibtex(bib_fn, doi):
     :type doi: str
     """
     ref = doi_lookup(doi)
+    ref = fix_queried_ref(ref)
     if ref is None:
         print('No reference added to bibtex database')
         return
