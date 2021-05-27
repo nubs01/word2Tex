@@ -100,10 +100,14 @@ def decode_Tex_accents(in_str):
     :return: corrected string
     :rtype: str
     """
+    # replaces latex accents with ascii letter (no accent)
     pat = "\{\\\\'\{(\w)\}\}"
     out = in_str
     for x in re.finditer(pat, in_str):
         out = out.replace(x.group(), x.groups()[0])
+
+    # replace latex {\textsinglequote} with actual single quote
+    out.replace('{\textquotesingle}', "'")
 
     return out
 
