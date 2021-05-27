@@ -107,7 +107,7 @@ def decode_Tex_accents(in_str):
         out = out.replace(x.group(), x.groups()[0])
 
     # replace latex {\textsinglequote} with actual single quote
-    out = out.replace('{\textquotesingle}', "'")
+    out = out.replace('{\\textquotesingle}', "'")
 
     return out
 
