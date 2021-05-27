@@ -1,3 +1,8 @@
+word2Tex 0.0.11 (2021-5-26)
+-----------------------------------
+- Fix citation_lookup in cite2Tex to better match in-text citations to bib via author year lookup
+- Fix do2bib to correct citation ID if authors' names contain accent marks
+
 word2Tex 0.0.10 (2021-5-21)
 -----------------------------------
 - fix imports
