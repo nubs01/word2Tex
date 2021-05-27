@@ -1,3 +1,7 @@
+word2Tex 0.0.13 (2021-5-26)
+-----------------------------------
+- Enable author lookup to deal with the latex command {\textquotesingle}
+
 word2Tex 0.0.12 (2021-5-26)
 -----------------------------------
 - Enable author lookup to deal with the latex command {\textquotesingle}
