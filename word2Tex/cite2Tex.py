@@ -106,8 +106,11 @@ def decode_Tex_accents(in_str):
     for x in re.finditer(pat, in_str):
         out = out.replace(x.group(), x.groups()[0])
 
-    # replace latex {\textsinglequote} with actual single quote
-    out = out.replace('{\\textquotesingle}', "'")
+    # replace latex {\textsinglequote} with underscore
+    out = out.replace('{\\textquotesingle}', "_")
+
+    # replace actual single quotes with underscore for bibtex compatibility
+    out = out.replace("'", '_')
 
     return out
 
